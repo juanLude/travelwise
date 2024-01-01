@@ -1,10 +1,15 @@
-import styles from "./CountryList.module.css";
 import Spinner from "./Spinner";
+import styles from "./CountryList.module.css";
 import CountryItem from "./CountryItem";
-import PropTypes from "prop-types";
 import Message from "./Message";
-export default function CityList({ cities, isLoading }) {
+import { useCities } from "../contexts/CitiesContext";
+import PropTypes from "prop-types";
+
+function CountryList() {
+  const { cities, isLoading } = useCities();
+
   if (isLoading) return <Spinner />;
+
   if (!cities.length)
     return (
       <Message message="Add your first city by clicking on a city on the map" />
@@ -15,15 +20,18 @@ export default function CityList({ cities, isLoading }) {
       return [...arr, { country: city.country, emoji: city.emoji }];
     else return arr;
   }, []);
+
   return (
     <ul className={styles.countryList}>
       {countries.map((country) => (
-        <CountryItem country={country} key={country.id} />
+        <CountryItem country={country} key={country.country} />
       ))}
     </ul>
   );
 }
-CityList.propTypes = {
-  cities: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired,
+
+export default CountryList;
+CountryList.propTypes = {
+  cities: PropTypes.array,
+  isLoading: PropTypes.bool,
 };

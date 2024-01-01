@@ -25,16 +25,16 @@
       "id": 17806751
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
+      "cityName": "Necochea",
+      "country": "Argentina",
+      "emoji": "🇦🇷",
+      "date": "2023-12-31T06:40:09.503Z",
+      "notes": "Best City in the world",
       "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
+        "lat": "-38.55494491595359",
+        "lng": "-58.73780250549317"
       },
-      "id": 98443197
+      "id": 98443199
     }
   ]
 }
